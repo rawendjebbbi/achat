@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     restart: unless-sytopped # Use a pre-built MySQL image
     environment:
-      - MYSQL_ROOT_PASSWORD:   # Set the root password (change for production)
+      - MYSQL_ROOT_PASSWORD: root   # Set the root password (change for production)
       - MYSQL_DATABASE: achat
     Ports:
       - 3306:3306
@@ -24,7 +24,7 @@ services:
       SPRING_APPLICATION_JSON: '{
       "spring.datasource.url" : "jdbc:mysql://mysqldb:8089/achat?createDatabaseIfNotExist=true",
       "spring.datasource.username": "root",
-      "spring.datasource.password": null,
+      "spring.datasource.password": "root",
       "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
       "spring.jpa.hibernate.ddl-auto" : "update"
 
