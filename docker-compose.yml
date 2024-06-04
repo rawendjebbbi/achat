@@ -12,6 +12,3 @@ services:
       - db
     ports:
       - "8089:8089"  # Map container port 8080 to host port 8080
-    environment:
-      # Add environment variables for database connection (if needed)
-      - spring.datasource.url: jdbc:mysql://db:3306/achatdb  # Example
