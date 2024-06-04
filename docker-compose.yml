@@ -6,9 +6,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root  # Set the root password (change for production)
       MYSQL_DATABASE: achatdb  # Set the database name
+    volumes:
+      - db-data:/var/lib/mysql  # Persist data volume for the database
   achat:
     build: .  # Build the image from the current directory (context)
     depends_on:
       - db
     ports:
       - "8089:8089"  # Map container port 8080 to host port 8080
+volumes:
+  db-data:  # Define a named volume for database persistence
