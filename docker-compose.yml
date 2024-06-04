@@ -7,7 +7,7 @@ services:
     environment:
       - MYSQL_DATABASE=achat
       - MYSQL_ROOT_PASSWORD=root # Set the root password (change for production)
-    Ports:
+    ports:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql
@@ -32,6 +32,6 @@ services:
     stdin_open: true
     tty: true
 
-  volumes:
-    db: # Map container port 8080 to host port 8080
+volumes:
+  db: # Map container port 8080 to host port 8080
 
