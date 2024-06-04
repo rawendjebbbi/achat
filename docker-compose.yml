@@ -3,10 +3,10 @@ version: '3.8'  # Specify the Docker Compose version
 services:
   mysqldb:  # Define a separate service for the database (modify if not using MySQL)
     image: mysql:5.7
-    restart: unless-sytopped # Use a pre-built MySQL image
+    restart: unless-stopped # Use a pre-built MySQL image
     environment:
-      - MYSQL_ROOT_PASSWORD: root   # Set the root password (change for production)
-      - MYSQL_DATABASE: achat
+      - MYSQL_DATABASE=achat
+      - MYSQL_ROOT_PASSWORD=root # Set the root password (change for production)
     Ports:
       - 3306:3306
     volumes:
